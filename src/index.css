@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans:  'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', monospace;
+
+  --color-bg:              oklch(0.97 0.008 75);
+  --color-bg-2:            oklch(0.94 0.012 75);
+  --color-surface:         oklch(1 0 0);
+  --color-ink:             oklch(0.18 0.005 70);
+  --color-ink-soft:        oklch(0.40 0.01 70);
+  --color-muted:           oklch(0.60 0.012 70);
+  --color-line:            oklch(0.86 0.015 75);
+  --color-line-soft:       oklch(0.91 0.012 75);
+  --color-accent-red:      oklch(0.58 0.20 28);
+  --color-accent-red-soft: oklch(0.72 0.16 30);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Fretboard toolbar ─────────────────────────── */
+.fretboard-toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+/* ─── Shapes grid ───────────────────────────────── */
+.shapes-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+/* ─── Key row ───────────────────────────────────── */
+.key-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ─── Fretboard scroll ──────────────────────────── */
+.fretboard-scroll {
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.fretboard-scroll::-webkit-scrollbar { height: 8px; }
+.fretboard-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 4px;
+}
+.fretboard-scroll.is-vertical {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 78vh;
+  padding-bottom: 0;
+}
+.fretboard-scroll.is-vertical::-webkit-scrollbar { width: 8px; height: 0; }
+
+/* ─── Responsive ────────────────────────────────── */
+@media (max-width: 1099px) {
+  .shapes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+}
+
+@media (max-width: 699px) {
+  .shapes-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    justify-items: stretch;
+  }
+  .key-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .fretboard-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .fretboard-toolbar > * {
+    width: 100%;
+  }
+}
