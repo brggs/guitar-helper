@@ -133,7 +133,7 @@ export default function Fretboard({
         });
 
     const ring = isRoot
-      ? <circle cx={cx} cy={cy} r={R + 2} fill="none" stroke="#111" strokeWidth="2" />
+      ? <circle cx={cx} cy={cy} r={R + 2} fill="none" stroke="#fff" strokeWidth="2" />
       : null;
 
     let label = null;

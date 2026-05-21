@@ -80,7 +80,8 @@ export function pcAt(string: number, fret: number): number {
 export function placeShape(shape: Shape, keyPc: number): PlacedShape {
   const openPc = TUNING[shape.anchor.string];
   const anchorFret = ((keyPc - openPc) % 12 + 12) % 12;
-  const row0Fret = anchorFret - shape.anchor.row;
+  let row0Fret = anchorFret - shape.anchor.row;
+  if (row0Fret <= 0) row0Fret += 12;
 
   const notes: PlacedNote[] = [];
   for (let row = 0; row < 5; row++) {

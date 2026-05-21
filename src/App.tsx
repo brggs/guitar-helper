@@ -57,7 +57,7 @@ export default function App() {
           </div>
           <div>
             <h1 className="m-0 font-serif font-normal text-[36px] leading-none tracking-[-0.01em]">
-              CAGED Practice
+              CAGED Scale Shapes
             </h1>
             <p className="mt-1.5 text-ink-soft text-[14px]">
               Five shapes of the major scale across the neck.
@@ -111,7 +111,7 @@ export default function App() {
           ]).map(o => (
             <button
               key={o.v}
-              className={`border-none bg-transparent text-[13px] font-semibold px-3 py-1.5 rounded-[7px] whitespace-nowrap transition-all duration-150 cursor-pointer${labelMode === o.v ? ' bg-ink text-surface' : ' text-ink-soft hover:text-ink'}`}
+              className={`border-none text-[13px] font-semibold px-3 py-1.5 rounded-[7px] whitespace-nowrap transition-all duration-150 cursor-pointer${labelMode === o.v ? ' bg-ink text-surface' : ' bg-transparent text-ink-soft hover:text-ink'}`}
               onClick={() => setLabelMode(o.v)}
             >
               {o.l}

@@ -1,4 +1,4 @@
-# CAGED Practice
+# CAGED Scale Shapes
 
 A single-page guitar tool for visualising the five CAGED major-scale shapes across the full neck in any key. Pick a key, solo a shape, and see exactly where it sits on the fretboard.
 

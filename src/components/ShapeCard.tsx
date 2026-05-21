@@ -13,8 +13,7 @@ interface Props {
 
 export default function ShapeCard({ shape, color, keyPc, isSolo, isActive, onSolo, onToggle }: Props) {
   const placed = placeShape(shape, keyPc);
-  let lo = placed.row0Fret;
-  while (lo < 0) lo += 12;
+  const lo = placed.row0Fret;
   const hi = lo + 4;
   const fretLabel = lo === 0 ? 'Open' : `Fret ${lo}`;
   const rangeLabel = `Frets ${lo}–${hi}`;
