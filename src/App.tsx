@@ -150,8 +150,9 @@ export default function App() {
         onSoloShape={toggleSolo}
       />
 
-      <footer className="mt-4 text-center text-muted text-[13px]">
+      <footer className="mt-4 text-center text-muted text-[13px] flex flex-col gap-1.5">
         <p>Tap a shape to solo it on the fretboard. Tap a key to transpose all five shapes.</p>
+        <p>© 2026 · <a href="https://brggs.co.uk" target="_blank" rel="noopener noreferrer" className="underline hover:text-ink transition-colors duration-150">brggs.co.uk</a></p>
       </footer>
     </div>
   );
